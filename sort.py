@@ -135,6 +135,8 @@ def heap_sort(array):
               
 if __name__ == '__main__':
     array = [1, 4, 5, 3, 4, 2, 4]
+    print(merge_sort(array))
+    print(heap_sort(array))
     print(quick_sort(array, 0, len(array)-1))
     print(bubble_sort(array))
     print(select_sort(array))
