@@ -111,7 +111,7 @@ Space Complexity: O(1)
 '''  
 
 def heap_sort(array):
-    def build_heap(i, l, array):
+    def build_heap(i, l):
         left, right = 2 * i + 1, 2 * i + 2  ## 左右子节点的下标
         large_index = i
         if left <= l and array[i] < array[left]:
@@ -122,14 +122,14 @@ def heap_sort(array):
 
         if large_index != i:
             array[i], array[large_index] = array[large_index], array[i]
-            build_heap(large_index, l, array)
+            build_heap(large_index, l)
 
     l = len(array)
     for i in range(l // 2 - 1, -1, -1):
-        build_heap(i, l - 1, array)
+        build_heap(i, l - 1)
     for j in range(l - 1, -1, -1):
         array[0], array[j] = array[j], array[0]
-        build_heap(0, j - 1, array)
+        build_heap(0, j - 1)
 
     return array
               
